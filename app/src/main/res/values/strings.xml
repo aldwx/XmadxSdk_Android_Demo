@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">XmadxSDk_Test_Demo</string>
+
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="small">广告:582X166</string>
+    <string name="middle">广告:676x250</string>
+    <string name="lagrge">广告:960x540</string>
+    <string name="req_banner">下一个</string>
+    <string name="req_hide">隐藏</string>
+    <string name="req_show">展示</string>
+</resources>

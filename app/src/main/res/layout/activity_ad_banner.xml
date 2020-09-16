@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AdBannerActivity">
+    <LinearLayout
+        android:id="@+id/Liear_sdk"
+        android:layout_width="match_parent"
+        android:layout_height="450dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        >
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="260dip"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center" >
+
+        <Button
+            android:id="@+id/banner_change"
+            android:layout_width="120dip"
+            android:layout_height="34dip"
+            android:scaleType="fitStart"
+            android:background="@color/red"
+            android:text="@string/req_banner"
+            android:textColor="@android:color/white"
+            android:textSize="16sp" />
+        <Button
+            android:id="@+id/banner_hide"
+            android:layout_width="120dip"
+            android:layout_height="34dip"
+            android:layout_alignParentRight="true"
+            android:scaleType="fitEnd"
+            android:background="@color/red"
+            android:text="@string/req_hide"
+            android:textColor="@android:color/white"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+</LinearLayout>
