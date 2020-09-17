@@ -8,6 +8,8 @@ import android.widget.LinearLayout;
 import com.xmadx.Interface.AdViewBannerListener;
 import com.xmadx.constant.XmadxAdSdkManager;
 
+import java.util.Objects;
+
 public class AdBannerActivity extends AppCompatActivity implements AdViewBannerListener, View.OnClickListener {
     private LinearLayout LiearSdk;
     private XmadxAdSdkManager mAdSdkManager;
@@ -18,17 +20,18 @@ public class AdBannerActivity extends AppCompatActivity implements AdViewBannerL
     private Button banner_hide = null;
     private Button nextAd = null;
     private int refreshTime = -1;
+    private boolean isDev;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ad_banner);
 
-        adSize=getIntent().getExtras().getString("adSize");
-        asid=getIntent().getExtras().getString("asid");
-
+        adSize= Objects.requireNonNull(getIntent().getExtras()).getString("adSize");
+        asid=Objects.requireNonNull(getIntent().getExtras()).getString("asid");
+        isDev=getIntent().getExtras().getBoolean("isDev");
         LiearSdk = findViewById(R.id.Liear_sdk);
-        nextAd = (Button) findViewById(R.id.banner_change);
-        banner_hide = (Button) findViewById(R.id.banner_hide);
+        nextAd = findViewById(R.id.banner_change);
+        banner_hide = findViewById(R.id.banner_hide);
         requestBanner();
 
         nextAd.setOnClickListener(this);
@@ -38,18 +41,16 @@ public class AdBannerActivity extends AppCompatActivity implements AdViewBannerL
 
     private void requestBanner() {
 
-
-        //初始化
-        /**
-         * @params WEIXIN_APP_ID (自己申请的weixin平台的AppID)
-         * @parmas isDev true:为测试开发;false为正式开发
-         * @parmas re(传入需要加载广告的控件)
+        /*
+         *  WEIXIN_APP_ID (自己申请的weixin平台的AppID)
+         *  isDev true:为测试开发;false为正式开发
+         *  re(传入需要加载广告的控件)
          */
         mAdSdkManager = new XmadxAdSdkManager(this,
                 appKey,
                 asid,
                 adSize,
-                false,
+                isDev,
                 WEIXIN_APP_ID
         );
 

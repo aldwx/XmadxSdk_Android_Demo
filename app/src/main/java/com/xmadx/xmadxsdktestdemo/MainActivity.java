@@ -19,7 +19,6 @@ public class MainActivity extends AppCompatActivity {
     private String AdLarge = SdkConstant.BANNER_LARGE_960x540;
     private String asidMiddle = "xmede4da0e74db8c0b75eca18a3cc6d9";//替换你自己申请的广告位ID
     private String AdMiddle=SdkConstant.BANNER_MIDOLE_676x250;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, AdBannerActivity.class);
         intent.putExtra("asid", asidSmall);
         intent.putExtra("adSize",AdSmall);
+        intent.putExtra("isDev",true);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }
@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, AdBannerActivity.class);
         intent.putExtra("asid", asidMiddle);
         intent.putExtra("adSize",AdMiddle);
+        intent.putExtra("isDev",true);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }
@@ -49,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, AdBannerActivity.class);
         intent.putExtra("asid", asidLarge);
         intent.putExtra("adSize",AdLarge);
+        intent.putExtra("isDev",false);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }
